@@ -1,0 +1,6 @@
+1666610790668	Delete resource 'HMI_ECU/HAL/Keypad'
+1666610824781	Delete resource 'HMI_ECU/HAL/Keypad_Module/std_types.h'
+1666631165724	Delete 2 resources
+1666631290678	Delete resource 'Control_ECU/HAL/External_EEPROM'
+1666631495481	Delete resource 'Control_ECU/HAL/DC_MOTOR_Module/std_types.h'
+1666705146894	Delete resource 'Control_ECU/MCAL/PWM_Module/std_types.h'

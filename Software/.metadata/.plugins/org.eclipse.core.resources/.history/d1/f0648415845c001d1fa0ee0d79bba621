@@ -1,0 +1,177 @@
+/******************************************************************************
+ *
+ * Module: APP
+ *
+ * File Name: app.h
+ *
+ * Description: Header file for the Final_Project HMI_ECU application
+ *
+ * Author: Mohamed Ashraf
+ *
+ *******************************************************************************/
+
+#ifndef APP_H_
+#define APP_H_
+
+#include "std_types.h"
+
+/*******************************************************************************
+ *                                Definitions                                  *
+ *******************************************************************************/
+
+#define PASSWORD_SIZE				5
+#define RIGHT_PASSWORD				1
+#define WRONG_PASSWORD				0
+#define TWO_PASSWORDS_MATCHED		1
+#define TWO_PASSWORDS_NOT_MATCHED   0
+#define PASS_EXIST					0xCC
+
+/* UART Commands */
+#define HMI_READY					0xFF
+#define SETTING_UP_A_NEW_PASS		0xF1
+#define NEW_PASS_SAVED				0xF2
+#define PASS_CHECK					0xF3
+#define PASS_CORRECT				0xF4
+#define OPEN_DOOR					0xF5
+#define ACTIVATE_THE_ALERT			0xF6
+#define CHECK_IF_PASS_EXIST			0xF7
+#define RESET_PASS					0xF8
+#define RESET_COMPLETE				0xF9
+
+/*******************************************************************************
+ *                              Functions Prototypes                           *
+ *******************************************************************************/
+
+/*------------------------------------------------------------------
+[Function Name]:  app
+[Description]:  contain the main loop and the main functionality of the application
+[Args]:
+[in]	-NONE
+[out]	-NONE
+[in/out] -NONE
+[Returns]: Nothing
+------------------------------------------------------------------*/
+void app(void);
+
+
+
+
+/*------------------------------------------------------------------
+[Function Name]:  countSec
+[Description]:  function to increase the number of seconds by one whenever it called
+[Args]:
+[in]	-NONE
+[out]	-NONE
+[in/out] -NONE
+[Returns]: Nothing
+------------------------------------------------------------------*/
+void countSec(void);
+
+
+
+
+/*------------------------------------------------------------------
+[Function Name]:  getPassword
+[Description]:  function to get the password and store on an array
+[Args]:
+[in]	uint8 * pass:
+					Pointer to the password array
+[out]	-NONE
+[in/out] -NONE
+[Returns]: Nothing
+------------------------------------------------------------------*/
+void getPassword(uint8 * pass);
+
+
+
+
+/*------------------------------------------------------------------
+[Function Name]:  getPasswordConfirmation
+[Description]:  function to confirm that the password you entered
+[Args]:
+[in]	uint8 * pass:
+					Pointer to the password array
+[out]	-NONE
+[in/out] -NONE
+[Returns]: Nothing
+------------------------------------------------------------------*/
+void getPasswordConfirmation(uint8 * pass);
+
+
+
+
+/*------------------------------------------------------------------
+[Function Name]:  checkPasswordsMatching
+[Description]:  function to check the two passwords Matched
+[Args]:
+[in]	uint8 * pass1:
+					Pointer to the password1 array
+		uint8 * pass2:
+					Pointer to the password2 array
+[out]	-NONE
+[in/out] -NONE
+[Returns]: whether the passwords matched or not
+------------------------------------------------------------------*/
+uint8 checkPasswordsMatching(uint8 * pass1,uint8 * pass2);
+
+
+
+
+/*------------------------------------------------------------------
+[Function Name]:  checkPassword
+[Description]:  function to check if the password is Right or Wrong
+[Args]:
+[in]	uint8 * pass:
+					Pointer to the password array
+[out]	-NONE
+[in/out] -NONE
+[Returns]: whether the password is Right or Wrong
+------------------------------------------------------------------*/
+uint8 checkPassword(uint8 * pass);
+
+
+
+
+/*------------------------------------------------------------------
+[Function Name]:  openDoor
+[Description]:  Function to Open the door
+[Args]:
+[in]	-NONE
+[out]	-NONE
+[in/out] -NONE
+[Returns]: Nothing
+------------------------------------------------------------------*/
+void openDoor(void);
+
+
+
+
+/*------------------------------------------------------------------
+[Function Name]:  activateAlarm
+[Description]:  Function to Activate the alarm
+[Args]:
+[in]	-NONE
+[out]	-NONE
+[in/out] -NONE
+[Returns]: Nothing
+------------------------------------------------------------------*/
+void activateAlarm(void);
+
+
+
+
+/*------------------------------------------------------------------
+[Function Name]:  delaySeconds
+[Description]:  Function to wait a certain amount of seconds
+[Args]:
+[in]	uint8 sec:
+					number of seconds you want to wait
+[out]	-NONE
+[in/out] -NONE
+[Returns]: Nothing
+------------------------------------------------------------------*/
+void delaySeconds(uint8 sec);
+
+
+
+#endif /* APP_H_ */
