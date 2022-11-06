@@ -3,7 +3,7 @@ Door Locker Security System to unlock a door using a password.
 The Project Based on ATmega32 using two ECUs.
 
 First one: HMI_ECU (Human Machine Interface) with 2x16 LCD and 4x4 keypad.
-HMI_ECU is just responsible interaction with the user just take inputs through keypad and display 
+HMI_ECU is just responsible for interaction with the user just takes inputs through keypad and display 
 messages on the LCD.
 
 Second one: Control_ECU with EEPROM, Buzzer, and Dc-Motor.
